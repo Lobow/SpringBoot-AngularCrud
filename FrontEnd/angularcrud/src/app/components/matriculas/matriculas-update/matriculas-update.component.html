@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-title>Alterar Curso</mat-card-title>
+    <form>
+        <mat-form-field>
+            <mat-label>Aluno</mat-label>
+            <select matNativeControl required>
+              <option >{{matricula.fk_idAluno}}</option>
+            </select>
+        </mat-form-field>
+        <mat-form-field>
+           <mat-label>Curso</mat-label>
+  <select matNativeControl required>
+    <option >{{matricula.fk_idCurso}}</option>
+  </select>
+        </mat-form-field>
+           </form>
+    <button mat-raised-button (click)="updateMatricula()" color="primary" >
+        Atualizar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-title background-col>Informe os dados</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Informe a primeira nota"
+                [(ngModel)]="notas.nota1" name="nota1">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Informe a segunda nota"
+                [(ngModel)]="notas.nota2" name="nota2">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Informe a terceira nota"
+                [(ngModel)]="notas.nota3" name="nota3">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Media"
+                [(ngModel)]="notas.media" name="media">
+        </mat-form-field>
+         </form>
+    <button mat-raised-button (click)="cadastraNotas()" color="primary">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

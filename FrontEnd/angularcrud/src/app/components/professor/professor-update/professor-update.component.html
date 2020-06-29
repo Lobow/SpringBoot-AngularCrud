@@ -1,0 +1,36 @@
+<mat-card>
+    <mat-card-title>Alterar cadastro do Professor</mat-card-title>
+    <form>
+        <mat-form-field>
+        <input matInput placeholder="Informe seu nome"
+        [(ngModel)]="professor.nome" name="nome">
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Informe seu endereço"
+        [(ngModel)]="professor.endereco" name="endereco">
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Informe seu CEP"
+        [(ngModel)]="professor.cep" name="cep">
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Informe seu CPF"
+        [(ngModel)]="professor.cpf" name="cpf">
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Informe seu E-mail"
+        [(ngModel)]="professor.email" name="email">
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Informe a matéria"
+        [(ngModel)]="professor.materia" name="email">
+</mat-form-field>
+           </form>
+    <button mat-raised-button (click)="updateProfessor()" color="primary" >
+        Atualizar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

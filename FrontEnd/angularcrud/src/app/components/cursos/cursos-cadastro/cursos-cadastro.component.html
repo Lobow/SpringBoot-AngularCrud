@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-title background-col>Informe o nome do Curso</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Digite o nome do curso"
+                [(ngModel)]="curso.nomeCurso" name="nome">
+        </mat-form-field>
+         </form>
+    <button mat-raised-button (click)="cadastraCurso()" color="primary">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

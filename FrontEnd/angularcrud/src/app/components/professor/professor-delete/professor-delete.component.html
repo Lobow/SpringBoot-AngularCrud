@@ -1,0 +1,36 @@
+<mat-card>
+    <mat-card-title>Excluir professor</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Informe seu nome"
+               [value]="professor.nome" name="nome" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Informe seu endereço"
+               [value]="professor.endereco" name="endereco" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Informe seu CEP"
+               [value]="professor.cep" name="cep" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Informe seu CPF"
+               [value]="professor.cpf" name="cpf" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Informe seu E-mail"
+               [value]="professor.email" name="email" disabled>
+           </mat-form-field>
+           <mat-form-field>
+            <input matInput placeholder="Informe sua materia"
+               [value]="professor.materia" name="email" disabled>
+           </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="deleteProfessor()" color="warn">
+        Excluir
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

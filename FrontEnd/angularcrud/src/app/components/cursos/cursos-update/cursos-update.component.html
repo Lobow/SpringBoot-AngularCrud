@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-title>Alterar Curso</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Informe o novo nome aqui!"
+                [(ngModel)]="curso.nomeCurso" name="nomeCurso">
+        </mat-form-field>
+           </form>
+    <button mat-raised-button (click)="updateCurso()" color="primary" >
+        Atualizar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

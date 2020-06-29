@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-title background-col>Informe o nome do Curso</mat-card-title>
+    <form>
+        <mat-form-field>
+            <mat-label>Aluno</mat-label>
+            <select matNativeControl required>
+              <option >test</option>
+            </select>
+        </mat-form-field>
+        <mat-form-field>
+           <mat-label>Curso</mat-label>
+  <select matNativeControl required>
+    <option >teste</option>
+  </select>
+        </mat-form-field>
+         </form>
+    <button mat-raised-button (click)="cadastraMatricula()" color="primary">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
