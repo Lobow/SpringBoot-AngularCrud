@@ -7,12 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @Entity
 @Table(name="curso")
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class Curso {
+@JsonInclude(JsonInclude.Include.NON_NULL)public class Curso {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,7 @@ public class Curso {
 	@Column(name = "nomecurso")
 	private String nomeCurso;
 	
-
+	@JsonCreator
 	public Curso() {
 		// TODO Auto-generated constructor stub
 	}

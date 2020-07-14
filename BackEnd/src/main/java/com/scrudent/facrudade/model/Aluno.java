@@ -7,8 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 @Entity
 @Table(name="aluno")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Aluno {
 
 	@Id
@@ -31,10 +35,8 @@ public class Aluno {
 	@Column(name = "email")
 	private String email;
 	
-	
-	public Aluno() {
-		// TODO Auto-generated constructor stub
-	}
+	@JsonCreator
+	public Aluno() {}
 
 
 	public Aluno(long idAluno, String nome, String endereco, String cep, String cpf, String email) {

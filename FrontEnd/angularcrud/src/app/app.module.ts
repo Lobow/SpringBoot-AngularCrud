@@ -46,6 +46,7 @@ import { ProfessorCadastroComponent } from './components/professor/professor-cad
 import { ProfessorUpdateComponent } from './components/professor/professor-update/professor-update.component';
 import { ProfessorDeleteComponent } from './components/professor/professor-delete/professor-delete.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,7 +79,8 @@ import { ProfessorDeleteComponent } from './components/professor/professor-delet
     AlunosCrudComponent,
     MatriculasCrudComponent,
     ProfessorCrudComponent,
-    NotasCrudComponent
+    NotasCrudComponent,
+    
   ],
   imports: [
     BrowserModule,

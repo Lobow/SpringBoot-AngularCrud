@@ -1,5 +1,8 @@
+import { Aluno } from '../alunos/alunos.model'
+import { Curso } from '../cursos/curso.model'
+
 export interface Matricula{
-    idMatricula?: number
-    fk_idAluno?: number
-    fk_idCurso?: number
+    idMatricula: number
+    aluno: Aluno
+    curso: Curso
 }

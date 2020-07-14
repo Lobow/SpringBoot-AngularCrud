@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -18,13 +19,13 @@ public class Notas {
 	@Column(name = "idnotas", unique = true)
 	private long idNotas;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "idaluno" ,referencedColumnName="idaluno")
-	private Aluno fk_idAluno;
+	private Aluno aluno;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "idprofessor",referencedColumnName="idprofessor")
-	private Professor fk_idProfessor;
+	private Professor professor;
 	
 	@Column(name = "nota1")
 	private float nota1;
@@ -38,54 +39,56 @@ public class Notas {
 	@Column(name = "media")
 	private float media;
 	
-	
+	@ManyToOne
+	@JoinColumn(name = "materia")
+	private Professor materia;
 	public Notas() {
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public Notas(long idNota, Aluno fk_idAluno, Professor fk_idProfessor, float nota1, float nota2,
-			float nota3, float media) {
+	public Notas(long idNota, Aluno aluno, Professor professor, float nota1, float nota2,
+			float nota3, float media, Professor materia) {
 		super();
 		this.idNotas = idNota;
-		this.fk_idAluno = fk_idAluno;
-		this.fk_idProfessor = fk_idProfessor;
+		this.aluno = aluno;
+		this.professor = professor;
 		this.nota1 = nota1;
 		this.nota2 = nota2;
 		this.nota3 = nota3;
 		this.media = media;
+		this.materia= materia;
 	}
 
 
-	public long getIdNota() {
+	public long getIdNotas() {
 		return idNotas;
 	}
 
 
-	public void setIdNota(long idNota) {
-		this.idNotas = idNota;
+	public void setIdNotas(long idNotas) {
+		this.idNotas = idNotas;
 	}
 
 
-	public Aluno getFk_idAluno() {
-		return fk_idAluno;
+	public Aluno getAluno() {
+		return aluno;
 	}
 
 
-	public void setFk_idAluno(Aluno fk_idAluno) {
-		this.fk_idAluno = fk_idAluno;
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
 	}
 
 
-	public Professor getFk_idProfessor() {
-		return fk_idProfessor;
+	public Professor getProfessor() {
+		return professor;
 	}
 
 
-	public void setFk_idProfessor(Professor fk_idProfessor) {
-		this.fk_idProfessor = fk_idProfessor;
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
 	}
-
 
 
 	public float getNota1() {
@@ -126,6 +129,21 @@ public class Notas {
 	public void setMedia(float media) {
 		this.media = media;
 	}
+
+
+	public Professor getMateria() {
+		return materia;
+	}
+
+
+	public void setMateria(Professor materia) {
+		this.materia = materia;
+	}
+
+
+	
+
+
 	
 	
 

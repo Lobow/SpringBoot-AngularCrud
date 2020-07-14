@@ -4,13 +4,15 @@
         <mat-form-field>
             <mat-label>Aluno</mat-label>
             <select matNativeControl required>
-              <option >test</option>
+                <option *ngFor="let aluno of alunos">
+                    {{aluno.nome}}
+                </option>
             </select>
         </mat-form-field>
         <mat-form-field>
            <mat-label>Curso</mat-label>
   <select matNativeControl required>
-    <option >teste</option>
+    <option *ngFor="let curso of cursos">{{curso.nomeCurso}}</option>
   </select>
         </mat-form-field>
          </form>

@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class MatriculasReadComponent implements OnInit {
 
   matricula: Matricula[]
-  displayedColumns = ['idMatricula', 'fk_idAluno', 'fk_idCurso', 'action']
+  displayedColumns = ['idMatricula', 'aluno', 'curso', 'action']
   
   constructor(private matriculaService: MatriculasService) { }
 

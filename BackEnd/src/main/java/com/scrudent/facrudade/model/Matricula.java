@@ -11,11 +11,12 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name="matricula")
-@JsonIdentityInfo( generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Matricula {
 	
 
@@ -24,13 +25,13 @@ public class Matricula {
 	@Column(name = "idmatricula", unique = true)
 	private long idMatricula;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "idaluno",referencedColumnName="idaluno")
-	private Aluno fk_idAluno;
+	private Aluno aluno;
 		
-	@OneToOne
-	@JoinColumn(name = "idcursos",referencedColumnName="idcurso")
-	private Curso fk_idCurso;
+	@ManyToOne
+	@JoinColumn(name = "idcurso",referencedColumnName="idcurso")
+	private Curso curso;
 		
 		
 	
@@ -38,11 +39,11 @@ public class Matricula {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Matricula(long idMatricula, Aluno fk_idAluno, Curso fk_idCurso) {
+	public Matricula(long idMatricula, Aluno aluno, Curso curso) {
 		super();
 		this.idMatricula = idMatricula;
-		this.fk_idAluno = fk_idAluno;
-		this.fk_idCurso = fk_idCurso;
+		this.aluno = aluno;
+		this.curso = curso;
 
 	}
 
@@ -54,22 +55,23 @@ public class Matricula {
 		this.idMatricula = idMatricula;
 	}
 
-	public long getFk_idAluno() {
-		return fk_idAluno.getIdAluno();
+	public Aluno getAluno() {
+		return aluno;
 	}
 
-	public void setFk_idAluno(Aluno fk_idAluno) {
-		this.fk_idAluno = fk_idAluno;
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
 	}
 
-	public long getFk_idCurso() {
-		return fk_idCurso.getIdCurso();
+	public Curso getCurso() {
+		return curso;
 	}
 
-	public void setFk_idCurso(Curso fk_idCurso) {
-		this.fk_idCurso = fk_idCurso;
+	public void setCurso(Curso curso) {
+		this.curso = curso;
 	}
 
+	
 	
 	
 

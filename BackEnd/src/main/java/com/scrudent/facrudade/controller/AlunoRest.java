@@ -1,6 +1,8 @@
 package com.scrudent.facrudade.controller;
 
 
+import java.util.Optional;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -43,6 +45,8 @@ public class AlunoRest {
 		           .orElse(ResponseEntity.notFound().build());
 	}
 	
+			
+
 	@PutMapping("/{idaluno}")
 		public ResponseEntity<Aluno> update(@PathVariable("idaluno") long idAluno,
 		                                      @RequestBody Aluno aluno) {
@@ -58,7 +62,6 @@ public class AlunoRest {
 		               return ResponseEntity.ok().body(updated);
 		           }).orElse(ResponseEntity.notFound().build());
 		}
-			
 	
 	@PostMapping
 	public void post(@RequestBody Aluno aluno) {
