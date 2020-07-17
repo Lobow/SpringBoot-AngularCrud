@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.scrudent.facrudade.model.Aluno;
 import com.scrudent.facrudade.model.Curso;
 import com.scrudent.facrudade.model.Matricula;
 import com.scrudent.facrudade.repository.MatriculaRepository;
@@ -46,6 +47,17 @@ public class MatriculaRest {
 		return matriculaRepository.findById(idMatricula)
 		           .map(record -> ResponseEntity.ok().body(record))
 		           .orElse(ResponseEntity.notFound().build());
+	}
+
+	@PutMapping("/{idmatricula}")
+	public ResponseEntity<Matricula> update(@PathVariable("idmatricula") long idMatricula,
+	                                      @RequestBody Matricula matricula) {
+	   return matriculaRepository.findById(idMatricula)
+	           .map(record -> {
+	               record.setCurso(matricula.getCurso());	          
+	               Matricula update = matriculaRepository.save(record);
+	               return ResponseEntity.ok().body(update);
+	           }).orElse(ResponseEntity.notFound().build());
 	}
 	
 	

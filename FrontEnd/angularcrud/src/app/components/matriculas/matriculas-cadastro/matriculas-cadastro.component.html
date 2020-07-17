@@ -1,25 +1,26 @@
 <mat-card>
     <mat-card-title background-col>Informe o nome do Curso</mat-card-title>
     <form>
-        <mat-form-field>
+        <mat-form-field  *ngIf="carregouAluno">
             <mat-label>Aluno</mat-label>
-            <select matNativeControl required>
-                <option *ngFor="let aluno of alunos">
+            <select name="aluno" [(ngModel)]="matricula.aluno" matNativeControl required>
+                <option  *ngFor="let aluno of alunos" [ngValue]="aluno">
                     {{aluno.nome}}
                 </option>
             </select>
         </mat-form-field>
-        <mat-form-field>
-           <mat-label>Curso</mat-label>
-  <select matNativeControl required>
-    <option *ngFor="let curso of cursos">{{curso.nomeCurso}}</option>
-  </select>
+        <mat-form-field  *ngIf="carregouCurso">
+            <mat-label>Curso</mat-label>
+            <select name="curso" [(ngModel)]="matricula.curso" matNativeControl required>
+                <option *ngFor="let curso of cursos" [ngValue]="curso">
+                    {{curso.nomeCurso}}
+                </option>
+            </select>
         </mat-form-field>
-         </form>
+    </form>
     <button mat-raised-button (click)="cadastraMatricula()" color="primary">
         Salvar
     </button>
-    
     <button mat-raised-button (click)="cancel()">
         Cancelar
     </button>

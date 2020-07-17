@@ -1,5 +1,7 @@
 package com.scrudent.facrudade.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @Entity
 @Table(name="aluno")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Aluno {
+public class Aluno implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,8 +37,10 @@ public class Aluno {
 	@Column(name = "email")
 	private String email;
 	
-	@JsonCreator
-	public Aluno() {}
+	
+	public Aluno() {
+		super();
+	}
 
 
 	public Aluno(long idAluno, String nome, String endereco, String cep, String cpf, String email) {

@@ -1,8 +1,8 @@
-import { Aluno } from '../alunos/alunos.model'
-import { Curso } from '../cursos/curso.model'
+import { Aluno } from '../alunos/alunos.model';
+import { Curso } from '../cursos/curso.model';
 
-export interface Matricula{
-    idMatricula: number
-    aluno: Aluno
-    curso: Curso
+export class Matricula{
+    idMatricula?: number;
+    aluno: Aluno = new Aluno();
+    curso: Curso = new Curso();
 }

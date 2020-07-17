@@ -4,14 +4,16 @@
         <mat-form-field>
             <mat-label>Aluno</mat-label>
             <select matNativeControl required>
-              <option >{{matricula.aluno}}</option>
+              <option>{{matricula.aluno.nome}}</option>
             </select>
         </mat-form-field>
         <mat-form-field>
-           <mat-label>Curso</mat-label>
-  <select matNativeControl required>
-    <option >{{matricula.curso}}</option>
-  </select>
+            <mat-label>Curso</mat-label>
+            <select name="curso" [(ngModel)]="matricula.curso" matNativeControl required>
+                <option *ngFor="let curso of cursos" [ngValue]="curso">
+                    {{curso.nomeCurso}}
+                </option>
+            </select>
         </mat-form-field>
            </form>
     <button mat-raised-button (click)="updateMatricula()" color="primary" >

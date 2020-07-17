@@ -1,4 +1,4 @@
-export interface Curso {
+export class Curso {
     idCurso?: number;
     nomeCurso: String;
 }

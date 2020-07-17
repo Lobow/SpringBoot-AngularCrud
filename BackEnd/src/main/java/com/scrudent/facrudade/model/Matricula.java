@@ -1,5 +1,7 @@
 package com.scrudent.facrudade.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +19,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @Entity
 @Table(name="matricula")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Matricula {
+public class Matricula implements Serializable{
 	
 
 	@Id
@@ -36,7 +38,7 @@ public class Matricula {
 		
 	
 	public Matricula() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 
 	public Matricula(long idMatricula, Aluno aluno, Curso curso) {

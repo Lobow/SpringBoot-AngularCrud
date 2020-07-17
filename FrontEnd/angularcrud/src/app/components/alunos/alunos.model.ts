@@ -1,4 +1,4 @@
-export interface Aluno{
+export class Aluno{
     idAluno?: number
     nome: string
     endereco: string

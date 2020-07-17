@@ -25,10 +25,12 @@ export class MatriculasService {
   
 
   create(matricula: Matricula): Observable<Matricula> {
+    console.log(matricula) 
     return this.http.post<Matricula>(this.baseUrl, matricula).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
+   
   }
 
   read(): Observable<Matricula[]> {
