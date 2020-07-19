@@ -34,6 +34,7 @@ export class MatriculasReadComponent implements OnInit {
       this.curso = curso
     })
 
+
   }
 
 } 

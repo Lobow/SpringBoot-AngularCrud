@@ -1,6 +1,13 @@
 <mat-card>
     <mat-card-title>Alterar lançamento de Notas</mat-card-title>
     <form>
+          <mat-form-field>               
+                <input matInput placeholder="Aluno" [(ngModel)]="notas.aluno.nome" name="aluno" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Professor"
+                    [(ngModel)]="notas.professor.nome" name="professor" disabled>
+            </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Informe a primeira nota"
                 [(ngModel)]="notas.nota1" name="nota1">
@@ -15,7 +22,7 @@
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Media"
-                [(ngModel)]="notas.media" name="media">
+                [(ngModel)]="notas.media" name="media" disabled>
         </mat-form-field>
            </form>
     <button mat-raised-button (click)="updateNotas()" color="primary" >

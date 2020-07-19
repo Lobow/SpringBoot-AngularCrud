@@ -11,7 +11,7 @@
         </mat-form-field>
         <mat-form-field  *ngIf="carregouCurso">
             <mat-label>Curso</mat-label>
-            <select name="curso" [(ngModel)]="matricula.curso" matNativeControl required>
+            <select name="curso"[(ngModel)]="matricula.curso" matNativeControl required>
                 <option *ngFor="let curso of cursos" [ngValue]="curso">
                     {{curso.nomeCurso}}
                 </option>

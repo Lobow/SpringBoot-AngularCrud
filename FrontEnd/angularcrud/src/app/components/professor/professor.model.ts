@@ -1,4 +1,4 @@
-export interface Professor{
+export class Professor{
     idProfessor?: number
     nome: string
     endereco: string

@@ -1,24 +1,40 @@
 <mat-card>
     <mat-card-title background-col>Informe os dados</mat-card-title>
     <form>
+        <div>
+        <mat-form-field  *ngIf="carregouAluno">
+            <mat-label>Aluno</mat-label>
+            <select name="aluno" [(ngModel)]="notas.aluno" matNativeControl required>
+                <option  *ngFor="let aluno of alunos" [ngValue]="aluno">
+                    {{aluno.nome}}
+                </option>
+            </select>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field  *ngIf="carregouProfessor">
+            <mat-label>Professor</mat-label>
+            <select name="Professor" [(ngModel)]="notas.professor" matNativeControl required>
+                <option  *ngFor="let professor of professores" [ngValue]="professor">
+                    {{professor.nome}}
+                </option>
+            </select>
+        </mat-form-field>
+    </div>
         <mat-form-field>
-            <input matInput placeholder="Informe a primeira nota"
-                [(ngModel)]="notas.nota1" name="nota1">
+            <input type="number" matInput placeholder="Informe a primeira nota"
+                [(ngModel)]="notas.nota1" name="nota1" min="0" max="10" required>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Informe a segunda nota"
-                [(ngModel)]="notas.nota2" name="nota2">
+            <input type="number" matInput placeholder="Informe a segunda nota"
+                [(ngModel)]="notas.nota2" name="nota2" min="0" max="10" required>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Informe a terceira nota"
-                [(ngModel)]="notas.nota3" name="nota3">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Media"
-                [(ngModel)]="notas.media" name="media">
+            <input type="number" matInput placeholder="Informe a terceira nota"
+                [(ngModel)]="notas.nota3" name="nota3" min="0" max="10" required> 
         </mat-form-field>
          </form>
-    <button mat-raised-button (click)="cadastraNotas()" color="primary">
+    <button mat-raised-button (click)="calcularMedia(notas.nota1,notas.nota2,notas.nota3); cadastraNotas()" color="primary">
         Salvar
     </button>
     

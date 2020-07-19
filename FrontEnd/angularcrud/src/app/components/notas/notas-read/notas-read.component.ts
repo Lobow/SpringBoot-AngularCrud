@@ -10,7 +10,8 @@ import { NotasService } from '../notas.service';
 export class NotasReadComponent implements OnInit {
 
   notas: Notas[]
-  displayedColumns = ['idNotas', 'nota1','nota2','nota3','media', 'action']
+  nota:Notas
+  displayedColumns = ['idNotas','aluno','professor', 'nota1','nota2','nota3','media', 'action']
   
   constructor(private notasService: NotasService) { }
 
@@ -18,6 +19,14 @@ export class NotasReadComponent implements OnInit {
     this.notasService.read().subscribe(notas => {
       this.notas = notas
     })
+  }
+
+  validaMedia(){
+    if(this.nota.media>6){
+      return true
+    }else{
+      return false
+    }
   }
 
 }

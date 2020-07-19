@@ -39,9 +39,6 @@ public class Notas {
 	@Column(name = "media")
 	private float media;
 	
-	@Column
-	private String materia;
-	
 	public Notas() {
 		// TODO Auto-generated constructor stub
 	}
@@ -57,7 +54,7 @@ public class Notas {
 		this.nota2 = nota2;
 		this.nota3 = nota3;
 		this.media = media;
-		this.materia= materia;
+	
 	}
 
 
@@ -129,21 +126,6 @@ public class Notas {
 	public void setMedia(float media) {
 		this.media = media;
 	}
-
-
-	public String getMateria() {
-		return materia;
-	}
-
-
-	public void setMateria(String materia) {
-		this.materia = materia;
-	}
-
-
-	
-
-
 	
 	
 
