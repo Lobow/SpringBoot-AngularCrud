@@ -39,16 +39,16 @@ public class Notas {
 	@Column(name = "media")
 	private float media;
 	
-	@ManyToOne
-	@JoinColumn(name = "materia")
-	private Professor materia;
+	@Column
+	private String materia;
+	
 	public Notas() {
 		// TODO Auto-generated constructor stub
 	}
 
 
 	public Notas(long idNota, Aluno aluno, Professor professor, float nota1, float nota2,
-			float nota3, float media, Professor materia) {
+			float nota3, float media, String materia) {
 		super();
 		this.idNotas = idNota;
 		this.aluno = aluno;
@@ -131,12 +131,12 @@ public class Notas {
 	}
 
 
-	public Professor getMateria() {
+	public String getMateria() {
 		return materia;
 	}
 
 
-	public void setMateria(Professor materia) {
+	public void setMateria(String materia) {
 		this.materia = materia;
 	}
 

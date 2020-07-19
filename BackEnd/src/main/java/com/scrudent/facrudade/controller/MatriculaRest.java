@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.scrudent.facrudade.model.Aluno;
-import com.scrudent.facrudade.model.Curso;
 import com.scrudent.facrudade.model.Matricula;
 import com.scrudent.facrudade.repository.MatriculaRepository;
 

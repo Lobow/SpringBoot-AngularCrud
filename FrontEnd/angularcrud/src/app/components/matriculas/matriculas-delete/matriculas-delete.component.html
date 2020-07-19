@@ -2,8 +2,16 @@
     <mat-card-title>Excluir Matricula</mat-card-title>
     <form>
         <mat-form-field>
-            <input matInput placeholder="idMatricula"
+            <input matInput placeholder="ID"
                 [value]="matricula.idMatricula" name="idMatricula" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder=Aluno
+                [value]="matricula.aluno.nome" name="aluno" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Curso"
+                [value]="matricula.curso.nomeCurso" name="curso" disabled>
         </mat-form-field>
     </form>
     <button mat-raised-button (click)="deleteMatricula()" color="warn">
